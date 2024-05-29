@@ -8,7 +8,7 @@ CRUD de hóspedes de um hotel
 - sqlite3 db.db
 - execute os comandos do arquivo `cadastro-hospedes/database/db.sql`
 
-  # Iniciar projeto
+# Iniciar projeto
   
-  - cd `cadastros-hospedes`
-  - php -S `localhost:porta`
+- cd `cadastros-hospedes`
+- php -S `localhost:porta`
