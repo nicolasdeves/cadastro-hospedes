@@ -24,10 +24,6 @@ class UpdateController {
 
             $this->guest = new Guest($id, $name, $cpf, $phone, $room);
             $this->edit();
-            
-        } else {
-            echo "Erro init";
-            return;
         }
     }
 
