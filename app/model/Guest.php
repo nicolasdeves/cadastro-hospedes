@@ -7,7 +7,7 @@ class Guest {
     private $phone;
     private $room;
 
-    public function __construct($id, $nome, $cpf, $telefone, $quarto) {
+    public function __construct($id = null, $nome = '', $cpf = '', $telefone = '', $quarto = '') {
         $this->id = $id;
         $this->name = $nome;
         $this->cpf = $cpf;
