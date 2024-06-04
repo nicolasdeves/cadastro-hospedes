@@ -24,9 +24,6 @@ class CreateController {
 
             $this->guest = new Guest($id, $name, $cpf, $phone, $room);
             $this->insert();
-            
-        } else {
-            return;
         }
     }
 

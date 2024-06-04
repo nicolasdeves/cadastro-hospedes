@@ -26,6 +26,7 @@ class UpdateController {
             $this->edit();
             
         } else {
+            echo "Erro init";
             return;
         }
     }

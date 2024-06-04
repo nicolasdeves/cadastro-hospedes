@@ -19,8 +19,6 @@ class ReadController
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $this->show();
-        } else {
-            return;
         }
     }
 

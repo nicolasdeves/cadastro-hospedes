@@ -10,14 +10,16 @@ class GuestDAO {
 
     public function insert($guest) {
         $stmt = $this->db->prepare('INSERT INTO guest (name, cpf, phone, room) VALUES (:name, :cpf, :phone, :room)');
+        
+        if ($this->empty($guest)) {
+            return;
+        }
 
         $stmt->bindValue(':name', $guest->getName());
         $stmt->bindValue(':cpf', $guest->getCpf());
         $stmt->bindValue(':phone', $guest->getPhone());
         $stmt->bindValue(':room', $guest->getRoom());
-        //$stmt->execute();
-
-        return true ? $stmt->execute() : false;
+        $stmt->execute();
     }
 
     public function edit ($guest) {
@@ -30,8 +32,6 @@ class GuestDAO {
         $stmt->bindValue(':room', $guest->getRoom());
         $stmt->bindValue(':id', $guest->getId());
         $stmt->execute();
-
-        //return true ? $stmt->execute() : false;
     }
 
     public function delete($id) {
@@ -80,5 +80,13 @@ class GuestDAO {
 
         
         return $guests;
-    }  
+    }
+    
+    public function empty($guest) {
+        if($guest->nome == null || $guest->cpf == null|| $guest->phone == null || $guest->room == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
